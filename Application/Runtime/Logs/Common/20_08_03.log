@@ -1,0 +1,36 @@
+[ 2020-08-03T14:10:22+08:00 ] ::1 /thinkphp3/index.php/design.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000115s ]
+INFO: [ app_init ] --END-- [ RunTime:0.022109s ]
+ERR: 无法加载模块:Design
+
+[ 2020-08-03T14:11:50+08:00 ] ::1 /thinkphp3/index.php/design.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000208s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002469s ]
+ERR: 无法加载模块:Design
+
+[ 2020-08-03T14:39:01+08:00 ] ::1 /thinkphp3/index.php/design.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000139s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001351s ]
+ERR: 无法加载模块:Design
+
+[ 2020-08-03T14:39:01+08:00 ] ::1 /thinkphp3/index.php/design.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000151s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001344s ]
+ERR: 无法加载模块:Design
+
+[ 2020-08-03T14:52:28+08:00 ] ::1 /thinkphp3/index.php/MODULE/Cate/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000229s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002953s ]
+ERR: 无法加载模块:MODULE
+
+[ 2020-08-03T14:52:38+08:00 ] ::1 /thinkphp3/index.php/MODULE/Cate/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000168s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001768s ]
+ERR: 无法加载模块:MODULE
+

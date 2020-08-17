@@ -1,0 +1,22 @@
+<?php
+return array (
+  'DB_TYPE' => 'mysql',
+  'DB_HOST' => 'localhost',
+  'DB_NAME' => 'carshop',
+  'DB_USER' => 'root',
+  'DB_PWD' => 'root',
+  'DB_PORT' => 3306,
+  'DB_PREFIX' => 'cs_',
+  'DB_CHARSET' => 'utf8',
+  'DOMAIN' => '',
+  'TITLE' => '我的网站2',
+  'KEYWORDS' => 'thinkphp lzm',
+  'DESCRIPTION' => 'thinkphp lzm',
+  'EMAIL' => 'thinkphp lzm@164',
+  'CONTACT' => 'thinkphp lzm',
+  'FAX' => '12456585',
+  'PHONE' => '1378165***',
+  'ICP' => '备********号',
+  'COPY' => 'thinkphp lzm',
+  'ADDRESS' => 'thinkphp lzm',
+); ?>
