@@ -99,27 +99,35 @@ class ArticleController extends Controller
         $this->display();
     }
     // 单个删除
-    public function del()
+    public function del($id)
     {
-        $this->display();
+        $article=D('article');
+        if($article->delete($id))
+        {
+            $this->success('删除文章成功！',U('lst'));
+        }else
+        {
+            $this->error('删除文章失败！');
+        }
     }
     // 批量删除
     public function bdel()
     {
-        $cate = D('cate');
-        $ids = I('ids');
-        $ids = implode(',', $ids);  //1,2,3,4
-        //  结合model里面的_before_delete
-        if ($ids) {
-            if ($cate->delete($ids)) {
-                $this->success('批量删除栏目成功！', U('lst'));
-            } else {
-                $this->error('批量删除栏目失败！');
+        $article=D('article');
+        $ids=I('ids');
+        $ids=implode(',', $ids);
+        if($ids){
+            if($article->delete($ids)){
+                $this->success('批量删除文章成功！',U('lst'));
+            }else{
+                $this->error('批量删除文章失败！');
             }
-        } else {
-            $this->error('未选中任何内容！');
+        }else{
+            $this->error('未选中任何数据！');
         }
     }
+
+
     // 排序
     public function sortcate()
     {
