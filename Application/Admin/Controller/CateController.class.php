@@ -134,5 +134,38 @@ class CateController extends Controller
 		 $this->assign('cates',$cates);
 		 $this->display();
      }
-
+// 单个删除
+	 public function del()
+	 {
+		 $cate=D('cate');
+		 $id=I('id');
+		 if($cate->delete($id))
+		 {
+			 $this->success('成功删除栏目！',U('lst'));
+		 }else
+		 {
+			 $this->error('删除栏目失败！');
+		 }
+	 }
+// 批量删除
+	 public function bdel()
+	 {
+		 $cate=D('cate');
+		 $ids=I('ids');
+		 $ids=implode(',', $ids);  //1,2,3,4
+		//  结合model里面的_before_delete
+		 if($ids)
+		 {
+			 if($cate->delete($ids))
+			 {
+				 $this->success('批量删除栏目成功！',U('lst'));
+			 }else
+			 {
+				 $this->error('批量删除栏目失败！');
+			 }
+		 }else
+		 {
+			 $this->error('未选中任何内容！');
+		 }
+	 }
 }

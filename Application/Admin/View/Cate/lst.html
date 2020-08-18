@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUC; ?>/css/common.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUC; ?>/css/main.css" />
     <script type="text/javascript" src="<?php echo ADMIN_PUC; ?>/js/libs/modernizr.min.js"></script>
+    <script type="text/javascript" src="<?php echo ADMIN_PUC;?>/js/jquery-1.4.2.min.js"></script>
 </head>
 
 <body>
@@ -47,18 +48,18 @@
                 </div>
             </div>
             <div class="result-wrap">
-                <form name="myform" id="myform" method="post">
+                <form name="myform" id="myform" method="post" action="__">
                     <div class="result-title">
                         <div class="result-list">
-                            <a href="__CONTROLLER__/add"><i class="icon-font"></i>新增栏目</a>
-                            <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
-                            <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                            <a href="__CONTROLLER__/add" class="btn btn-primary btn2"><i class="icon-font"></i>新增栏目</a>
+                            <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i><input form="myform" formaction="__CONTROLLER__/bdel" type="submit" class="btn btn-primary btn2" value="批量删除" /></a>
+                            <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i><input form="myform" formaction="__CONTROLLER__/sortcate" type="submit" class="btn btn-primary btn2" value="更新排序" /></>
                         </div>
                     </div>
                     <div class="result-content">
                         <table class="result-tab" width="100%">
                             <tr>
-                                <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                                <th class="tc" width="5%"><input class="allChoose" name="" id='check' type="checkbox"></th>
                                 <th>排序</th>
                                 <th>ID</th>
                                 <th>栏目名称</th>
@@ -70,7 +71,7 @@
 
                             <volist name="cates" id="vo">
                                 <tr>
-                                    <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
+                                    <td class="tc"><input name="ids[]" value="{$vo.id}" class="check"  type="checkbox" ></td>
                                     <td>
                                         <input name="ids[]" value="59" type="hidden">
                                         <input class="common-input sort-input" name="ord[]" value="{$vo.sort}" type="text">
@@ -116,8 +117,8 @@
 
                                     <td>
                                         <a class="link-update" href="__CONTROLLER__/edit/id/{$vo.id}">修改</a>
-                                        <a class="link-del" href="#">删除</a>
-                                    </td>
+                                        <a class="link-del" onclick="return confirm('确定删除本栏目及其子栏目？');"  href="__CONTROLLER__/del/id/{$vo.id}">删除</a>
+                                    </td> 
                                 </tr>
 
                             </volist>
@@ -133,3 +134,17 @@
 </body>
 
 </html>
+<!-- js jquery实现复选框勾选 -->
+<script type="text/javascript">
+
+    $("#check").click(function(){
+     if($(this).attr("checked")){
+         $(".check").attr("checked","checked")
+     }else{
+        $(".check").removeAttr("checked")
+     }
+
+    });
+
+
+</script>

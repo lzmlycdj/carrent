@@ -30,7 +30,7 @@ class CateModel extends Model
 		return $ret;
 
 	}
-
+// 单个删除的时候寻找子id
 	public function childid($cateid)
 	{
 		$data=$this->select();
@@ -44,6 +44,7 @@ class CateModel extends Model
 			if($v['parentid']==$parentid)
 			{
 				$ret[]=$v['id'];
+				// 这里递归查找二代三代子孙
 				$this->getchildid($data,$v['id']);
 			}
 		}
@@ -51,11 +52,12 @@ class CateModel extends Model
 		return $ret;
 	}
 
-
+// 
 	public function _before_delete($options)
 	{
 		//单独删除时候id的值，是一个字符串，是一个单独的id
 		//$options['where']['id']    int(5)
+		
 		if(is_array($options['where']['id']))
 		{
 			$arr=explode(',', $options['where']['id'][1]);
@@ -70,11 +72,12 @@ class CateModel extends Model
 
 		}else
 		{
+			// 单个删除的时候用这个 把父id下面所有的子id都要一并删除
 			$chilrenids=$this->childid($options['where']['id']);
 			$chilrenids=implode(',', $chilrenids);
 			
 		}
-
+ 
 		if($chilrenids)
 			{
 				$this->execute("delete from cs_cate where id in($chilrenids)");
