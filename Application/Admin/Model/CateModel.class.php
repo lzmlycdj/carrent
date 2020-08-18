@@ -10,6 +10,7 @@ class CateModel extends Model
 
 	public function catetree()
 	{
+		//这里排序的时候要加上order，前台才会按照顺序显示出来
 		$data=$this->order('sort asc')->select();
 		return $this->resort($data);
 	}

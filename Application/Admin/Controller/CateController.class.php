@@ -168,4 +168,17 @@ class CateController extends Controller
 			 $this->error('未选中任何内容！');
 		 }
 	 }
+// 排序
+	 public function sortcate()
+	 {
+		  
+		 $cate=D('cate');
+		 foreach ($_POST as $id =>$sort) {
+			 $cate->where("id=$id")->setField('sort',$sort);
+		 }
+ 
+		 $this->success('成功更新栏目顺序！',U('lst'));
+	 }
+ 
+ 
 }
