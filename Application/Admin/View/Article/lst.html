@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>文章管理-后台管理</title>
+    <title>后台管理</title>
     <link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUC; ?>/css/common.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUC; ?>/css/main.css" />
     <script type="text/javascript" src="<?php echo ADMIN_PUC; ?>/js/libs/modernizr.min.js"></script>
@@ -24,7 +24,7 @@
 
             <div class="crumb-wrap">
                 <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin">首页</a>
-                    <span class="crumb-step">&gt;</span><span class="crumb-name">文章管理</span></div>
+                    <span class="crumb-step">&gt;</span><span class="crumb-name">栏目管理</span></div>
             </div>
             <div class="search-wrap">
                 <div class="search-content">
@@ -51,7 +51,7 @@
                 <form name="myform" id="myform" method="post" action="__">
                     <div class="result-title">
                         <div class="result-list">
-                            <a href="__CONTROLLER__/add" class="btn btn-primary btn2"><i class="icon-font"></i>新增文章</a>
+                            <a href="__CONTROLLER__/add" class="btn btn-primary btn2"><i class="icon-font"></i>新增栏目</a>
                             <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i><input form="myform" formaction="__CONTROLLER__/bdel" type="submit" class="btn btn-primary btn2" value="批量删除" /></a>
                             <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i><input form="myform" formaction="__CONTROLLER__/sortcate" type="submit" class="btn btn-primary btn2" value="更新排序" /></>
                         </div>
@@ -73,8 +73,8 @@
                                 <tr>
                                     <td class="tc"><input name="ids[]" value="{$vo.id}" class="check"  type="checkbox" ></td>
                                     <td>
-                                        <!-- <input name="ids[]" value="59" type="hidden"> -->
-                                        <input class="common-input sort-input" name="{$vo.id}" value="{$vo.sort}" type="text">
+                                        <input name="ids[]" value="59" type="hidden">
+                                        <input class="common-input sort-input" name="ord[]" value="{$vo.sort}" type="text">
                                     </td>
                                     <td>{$vo.id}</td>
                                     <td>
