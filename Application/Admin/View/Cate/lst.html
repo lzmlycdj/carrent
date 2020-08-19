@@ -33,11 +33,12 @@
                             <tr>
                                 <th width="120">选择分类:</th>
                                 <td>
-                                    <select name="search-sort" id="">
-                                        <option value="">全部</option>
-                                        <option value="19">精品界面</option>
-                                        <option value="20">推荐界面</option>
-                                    </select>
+                                <select name="search-sort" id="">
+                                    <option value="">全部</option>
+                                    <volist name="cates" id="vo">
+                                    <option <if condition="$vo['type'] neq 1">style="display:none;"</if> value="{$vo.id}"><if condition="$vo['parentid'] neq 0">|</if><?php echo str_repeat('-', $vo['level']*8);?>{$vo.name}</option>
+                                    </volist>
+                                </select>
                                 </td>
                                 <th width="70">关键字:</th>
                                 <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>

@@ -11,6 +11,8 @@ class ArticleController extends Controller
        
         $article=D('ArticleView');
         $where=1;
+        
+        // 文章后台搜索功能开始 模糊查询
         if($kw=I('kw')){
             $where.=' AND title LIKE "%'.$kw.'%"';
         }
