@@ -50,7 +50,7 @@ class LinkController extends Controller
         $this->assign('links',$links);
         $this->display();
     }
-
+// 单个删除
     public function del()
     {
         $link=D('link');
@@ -63,7 +63,7 @@ class LinkController extends Controller
             $this->error('删除链接失败！');
         }
     }
-
+// 批量删除
     public function bdel()
     {
         $link=D('link');
