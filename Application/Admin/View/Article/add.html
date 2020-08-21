@@ -6,6 +6,7 @@
     <title>添加文章——后台管理</title>
     <link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUC; ?>/css/common.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUC; ?>/css/main.css" />
+    <script type="text/javascript" src="<?php echo ADMIN_PUC;?>/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN_PUC; ?>/js/libs/modernizr.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"> </script>
@@ -75,12 +76,14 @@
                                 <th>文章类型：</th>
                                 <td>
                                 <div id="atype">
+                                <!-- 增加附加类型 -->
                                 <input class="common-text" name="atype" size="50" value="0" checked="checked"  type="radio">列表
                                 <input class="common-text" name="atype" size="50" value="1"  type="radio">车型
                                 <input class="common-text" name="atype" size="50" value="2"  type="radio">招聘
                                 </div>
                                 </td>
                             </tr>
+                            <!-- 展示内容 -->
                             <tr class="btype">
                                 <th>列表附加字段：</th>
                                 <td>
@@ -130,6 +133,19 @@
         initialFrameWidth: 1000,
         initialFrameHeight: 400,
     });
+
+   // 添加字段的js代码
+   $(".btype").hide();
+   //默认第一个显示
+   $(".btype").eq(0).show();
+   $("#atype input").click(
+       function(){
+           var i = $(this).index();
+           $(".btype").hide();
+           $(".btype").eq(i).show();
+       }
+   )
+
 </script>
 
 </html>
