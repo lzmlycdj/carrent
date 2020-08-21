@@ -8,7 +8,7 @@ return array (
   'DB_PORT' => 3306,
   'DB_PREFIX' => 'cs_',
   'DB_CHARSET' => 'utf8',
-  'DOMAIN' => '',
+  'DOMAIN' => 'localhost',
   'TITLE' => '我的网站2',
   'KEYWORDS' => 'thinkphp lzm',
   'DESCRIPTION' => 'thinkphp lzm',
