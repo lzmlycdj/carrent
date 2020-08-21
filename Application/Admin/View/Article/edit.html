@@ -6,6 +6,7 @@
     <title>添加栏目——后台管理</title>
     <link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUC; ?>/css/common.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUC; ?>/css/main.css" />
+    <script type="text/javascript" src="<?php echo ADMIN_PUC;?>/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN_PUC; ?>/js/libs/modernizr.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"> </script>
@@ -71,6 +72,7 @@
                                 </td>
                             </tr>
                             <tr>
+                                <!-- 新添字段的代码和add一样 -->
                                 <th>文章类型：</th>
                                 <td>
                                 <div id="atype">
@@ -131,6 +133,17 @@
         initialFrameWidth: 1000,
         initialFrameHeight: 400,
     });
+    $(".btype").hide();
+    var i={$artres.atype};
+    $(".btype").eq(i).show();
+    $("#atype input").click(function(){
+        var i=$(this).index();
+        $(".btype").hide();
+        $(".btype").eq(i).show();
+    });
+
+
+
 </script>
 
 </html>

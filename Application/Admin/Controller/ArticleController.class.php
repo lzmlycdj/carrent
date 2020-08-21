@@ -44,6 +44,7 @@ class ArticleController extends Controller
         if(IS_POST)
        {
             $data['title']=I('title');
+            // 新添字段逻辑处理
             $data['rizu']=I('rizu');
             $data['num']=I('num');
             $data['atype']=I('atype');
@@ -102,6 +103,7 @@ class ArticleController extends Controller
        {
             $data['title']=I('title');
             $data['id']=I('id');
+            // 修改页面新加的字段
             $data['rizu']=I('rizu');
             $data['num']=I('num');
             $data['atype']=I('atype');
