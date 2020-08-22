@@ -21,8 +21,13 @@ class AdminController extends Controller
 
     public function add(){
         if(IS_POST){
+            // 大D和大M区别
+            // 大D实例化出来的可以操作modle里面的方法
+            // 大M不能
             $admin=D('admin');
             if($admin->create()){
+                // 密码md5加密
+                 
                 $admin->password=md5($admin->password);
                 if($admin->add()){
                     $this->success('添加管理员成功！',U('lst'));
