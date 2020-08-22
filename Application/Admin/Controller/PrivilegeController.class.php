@@ -6,6 +6,7 @@ class PrivilegeController extends Controller
     public function lst()
     {
         $pri=D('privilege');
+        // 无限极分离展示
         $pris=$pri->pritree();
         $this->assign('pris',$pris);
         $this->display();

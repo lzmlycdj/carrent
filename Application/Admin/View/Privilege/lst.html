@@ -70,6 +70,7 @@
                                 <tr>
                                     <td class="tc"><input name="ids[]" value="{$vo.id}" class="check" type="checkbox"></td>
                                     <td>{$vo.id}</td>
+                                    <!-- 输出子栏目 -->
                                     <td>
                                         <if condition="$vo['parentid'] neq 0">|</if><?php echo str_repeat('-', $vo['level'] * 8); ?>{$vo.pri_name}
                                     </td>

@@ -55,7 +55,7 @@ class PrivilegeModel extends Model
 		return $ret;
 	}
 
-
+// 钩子函数前置删除
 	public function _before_delete($options)
 	{
 		//单独删除时候id的值，是一个字符串，是一个单独的id
