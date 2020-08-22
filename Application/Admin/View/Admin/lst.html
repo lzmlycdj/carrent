@@ -68,6 +68,7 @@
                             <td>{$vo.rolename}</td>
                             <td>
                                 <a class="link-update" href="__CONTROLLER__/edit/id/{$vo.id}">修改</a>
+                                <!-- 如果管理员id为1，是主管理员就必须保留不能删除 -->
                                 <if condition="$vo['id'] neq 1">
                                 <a class="link-del" onclick="return confirm('确定删除此管理员吗？');" href="__CONTROLLER__/del/id/{$vo.id}">删除</a>
                                 </if>

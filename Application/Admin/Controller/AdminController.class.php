@@ -49,6 +49,7 @@ class AdminController extends Controller
     }
 
     public function edit(){
+        // 大D大M都可以，因为这里不需要操作model里面的方法
         $admin=D('admin');
         if(IS_POST){
             if($admin->create()){
@@ -72,7 +73,7 @@ class AdminController extends Controller
         $this->assign('roles',$roles);
         $this->display();
     }
-
+// 删除
     public function del(){
         $id=I('id');
         $admin=D('admin');
@@ -85,7 +86,7 @@ class AdminController extends Controller
             $this->error('删除管理员失败！');
         }
     }
-   
+//    批量删除管理员
    public function bdel(){
     $ids=I('ids');
     $admin=D('admin');
