@@ -16,6 +16,7 @@
         </div>
         <include file="Common/left" /> 
     <!--/sidebar-->
+    </div>
     <div class="main-wrap">
 
         <div class="crumb-wrap">
@@ -32,7 +33,10 @@
                                 <select name="parentid" id="catid" class="required">
                                     <option value="0">顶级权限</option>
                                     <volist name="pris" id="vo">
-                                    <option <if condition="$vo['id'] eq $prires['parentid']">selected="selected"</if>  <if condition="$vo['id'] eq $prires['id']">style="display:none;"</if> value="{$vo.id}"><if condition="$vo['parentid'] neq 0">|</if><?php echo str_repeat('-', $vo['level']*8);?>{$vo.pri_name}</option>
+                                    <option <if condition="$vo['id'] eq $prires['parentid']">selected="selected"</if>  
+                                    <if condition="$vo['id'] eq $prires['id']">style="display:none;"</if> value="{$vo.id}">
+                                    <if condition="$vo['parentid'] neq 0">|</if><?php echo str_repeat('-', $vo['level']*8);?>{$vo.pri_name}
+                                    </option>
                                     </volist>
                                 </select>
                             </td>

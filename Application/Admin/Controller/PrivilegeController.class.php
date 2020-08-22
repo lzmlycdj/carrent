@@ -33,7 +33,7 @@ class PrivilegeController extends Controller
         $this->assign('pris',$pris);
         $this->display();
     }
-
+// 修改
     public function edit()
     {
         $pri=D('privilege');
@@ -50,6 +50,7 @@ class PrivilegeController extends Controller
 
             return;
         }
+        // 展示数据
         $id=I('id');
         $prires=$pri->find($id);
         $this->assign('prires',$prires);
