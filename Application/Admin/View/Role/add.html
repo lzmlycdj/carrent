@@ -71,11 +71,13 @@
 
 </html>
 <script type="text/javascript">
+// 复选框选择 选择子项目的时候，对应的父项目也要选择用jquery
     $(":checkbox").click(function() {
-        var cur_li = $(this).parent();
+        var cur_li = $(this).parent(); 
         var level = cur_li.attr("level");
         var checked = $(this).attr("checked");
         cur_li.prevAll("li").each(function() {
+            // 父level比子level小
             if ($(this).attr("level") < level && checked) {
                 $(this).find(":checkbox").attr("checked", "checked");
                 if ($(this).attr("level") == 0) {
@@ -83,7 +85,7 @@
                 }
             }
         });
-
+          // 复选框选择 取消选择父项目的时候，对应的子项目也要取消选择用jquery
         if (!checked) {
             //
             cur_li.nextAll("li").each(function() {
