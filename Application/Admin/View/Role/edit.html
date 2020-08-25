@@ -39,8 +39,9 @@
                                 <th><i class="require-red">*</i>角色的权限：</th>
                                 <td>
                                 <ul>
+                                <!-- 这里role对应的权限循环 -->
                                 <?php foreach($pris as $k=>$v):
-                                         //,3,2,4,53,               //,3,
+                                         //,3,2,4,53,               //,3,  加,防止匹配错误
                                 if(strpos(','.$roleres['pri_id_list'].',',','.$v['id'].',')!==false){
                                     $check="checked='checked'";
                                 }else{
