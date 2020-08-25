@@ -4,7 +4,7 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class RoleController extends Controller
+class RoleController extends CommonController
 {
     public function lst()
     {

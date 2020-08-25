@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class LinkController extends Controller 
+class LinkController extends CommonController 
 {
     public function lst(){
         $link=D('link');
