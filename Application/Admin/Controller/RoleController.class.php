@@ -77,6 +77,7 @@ class RoleController extends Controller
     {
         $id = I('id');
         $role = D('role');
+        // 超级管理者不能删除
         if ($id == 1) {
             $this->error('超级管理员角色无法删除！');
         }
@@ -92,7 +93,7 @@ class RoleController extends Controller
         $ids = I('ids');
         if ($ids) {
             $key = array_search(1, $ids);
-            if ($key !== fales) {
+            if ($key !== false) {
                 unset($ids[$key]);
             }
             $role = D('role');

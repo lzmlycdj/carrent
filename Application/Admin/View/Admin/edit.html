@@ -54,6 +54,7 @@
                                     <td>
                                         <select name="roleid">
                                             <volist name="roles" id="vo">
+                                                <!-- 当前管理员的角色 -->
                                                 <option <if condition="$adminres['roleid'] eq $vo['id']">selected="selected"</if> value="{$vo.id}">{$vo.rolename}</option>
                                             </volist>
                                         </select>

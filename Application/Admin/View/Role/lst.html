@@ -72,6 +72,7 @@
                             <td>{$vo.id}</td>
                             <td>{$vo.rolename}</td>
                             <td>
+                                <!-- 超级管理者所有权限 -->
                             <if condition="$vo['pri_id_list'] eq '*'">所有权限
                             <else />
                             {$vo.pri_name}
@@ -79,6 +80,7 @@
                             </td>
                             <td>
                                 <a class="link-update" href="__CONTROLLER__/edit/id/{$vo.id}">修改</a>
+                                <!-- 超级管理者不能删除 -->
                                <if condition="$vo['id'] neq 1">
                                 <a class="link-del" onclick="return confirm('确定删除此角色吗？');" href="__CONTROLLER__/del/id/{$vo.id}">删除</a>
                                 </if>
