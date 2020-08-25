@@ -12,7 +12,7 @@ class RoleController extends Controller
         $count = $role->count(); // 查询满足要求的总记录数
         $Page = new \Think\Page($count, 3); // 实例化分页类 传入总记录数和每页显示的记录数(25)
         $show = $Page->show(); // 分页显示输出
-         
+        //  这一部分比较重要
         $list = $role->field('a.*,GROUP_CONCAT(b.pri_name) pri_name')
         ->alias('a')->join('LEFT JOIN cs_privilege b ON FIND_IN_SET(b.id,a.pri_id_list)')
         ->limit($Page->firstRow . ',' . $Page->listRows)->group('a.id')->select();
